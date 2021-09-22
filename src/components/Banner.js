@@ -5,8 +5,10 @@ const Banner = () => {
 
 
   return (
-    
-    <h1>Workout Coach</h1>
+    <React.Fragment>
+      <h1>Workout</h1>
+      <h1>Coach</h1>
+    </React.Fragment>
   )}
 
 export default Banner;

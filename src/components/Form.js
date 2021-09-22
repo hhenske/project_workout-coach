@@ -1,4 +1,5 @@
 import React from 'react';
+import classes from './form.module.css';
 
 
 const Form = () => {
@@ -7,7 +8,9 @@ return (
   <div>
     <form>
       <div>
-        <label><h2>What kind of workout would you like today?</h2>
+      <h2>Let's choose a workout!</h2>
+      <br />
+        <label><h3>What kind of workout would you like today?</h3>
           <select name = "workoutCategory">
                         <option value = "">* Choose an activity *</option>
                         <option value="1">Core Exercises</option>
@@ -16,8 +19,9 @@ return (
                         <option value="4">Yoga Stretching</option>
             </select></label>
         </div>
+        <br />
         <div>
-        <label><h4>How ar you feeling today?</h4>
+        <label><h4>How are you feeling today?</h4>
           <select name = "workoutIntensity">
                         <option value = "">* Choose one*</option>
                         <option value="1">Great! up for a super hard workout!</option>

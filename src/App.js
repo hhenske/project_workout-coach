@@ -1,38 +1,46 @@
-import React, { BrowserRouter, Route, Switch } from 'react';
+import React, { useState } from 'react';
 import './App.module.css';
-//import Navigation from './components/Navigation'; 
-import Navbar from './components/Navbar';
+import Navigation from './components/Navigation'; 
+//import Navbar from './components/Navbar';
 import Form from './components/Form';
-import Log from './components/Log';
+//import Log from './components/Log';
 
 import Banner from './components/Banner';
 
+
 function App() {
+
+const [homeButton, setHomeButton] = useState(true);
+const [logButton, setLogButton] = useState(false);
+
+const homeButtonHandler = () => {
+  
+};
+
+const logButtonHandler = () => {
+
+};
+
   return (
-    <>
-      <div className = "banner">
+    <React.Fragment>
+      <div id = "testing" style={{textAlign:"center", 
+                  backgroundImage:"linear-gradient(to left, #eea2a2 0%, #bbc1bf 19%, #57c6e1 42%, #b49fda 79%, #7ac5d8 100%)",
+                  margin: "0px"
+                  }}>
         <Banner />
       </div>
+     
       <nav>
-        <BrowserRouter>
-          <Navbar />
-          <div className="container mt-2" style={{ marginTop: 40 }}>
-            <Switch>
-              <Route path="./App">
-                <App />
-              </Route>
-              <Route path="/Log">
-                <Log />
-              </Route>
-            </Switch>
-          </div>
-        </BrowserRouter>
+        <Navigation />
       </nav>
+     
       <main>
-        <h2 className="title is-1">Let's choose a workout!</h2>
+        
+        <br />
         <Form />
+        {/* <Log /> (if Workout button is pushed) */}
       </main>
-    </>
+    </React.Fragment>
   );
 }
 
