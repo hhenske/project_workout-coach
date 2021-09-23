@@ -14,11 +14,13 @@ const [homeButton, setHomeButton] = useState(true);
 const [logButton, setLogButton] = useState(false);
 
 const homeButtonHandler = () => {
-  
+  return 
+  console.log("this works")
 };
 
 const logButtonHandler = () => {
-
+  return 
+  console.log('This also works')
 };
 
   return (
@@ -33,12 +35,11 @@ const logButtonHandler = () => {
       <nav>
         <Navigation />
       </nav>
-     
+     {/* In main, will be the logic for displaying home or the workout log in the main section */}
       <main>
         
         <br />
         <Form />
-        {/* <Log /> (if Workout button is pushed) */}
       </main>
     </React.Fragment>
   );

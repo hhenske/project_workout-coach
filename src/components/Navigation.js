@@ -1,21 +1,19 @@
-import React from 'react';
-import {withRouter } from 'react-router-dom';
-import { Link } from 'react-router-dom';
+import React, { useState } from 'react';
 import classes from "./Navigation.module.css";
-import App from "../App";
-import Button from "./Button"
+import Button from "./Button";
+import App from '../App';
 
 
-const Navigation = () => {
+const Navigation = (props) => {
 
 
   return (
     <nav className = {classes.nav}>
       <h2 className = {classes.h2}>Navigation</h2>
       <br />
-      <Button>Home</Button>
+      <Button onClick={props.homeButtonHandler}>Home</Button>
       <br />
-      <Button>Workout Log</Button>
+      <Button onClick={props.logButtonHandler}>Workout Log</Button>
       <br />
 
 

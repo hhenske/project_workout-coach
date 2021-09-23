@@ -5,7 +5,7 @@ import classes from './form.module.css';
 const Form = () => {
 
 return (
-  <div>
+  
     <form>
       <div>
       <h2>Let's choose a workout!</h2>
@@ -32,7 +32,7 @@ return (
            
           </div>
         </form>
-      </div>
+      
 )};
 
 export default Form;
