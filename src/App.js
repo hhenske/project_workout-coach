@@ -21,6 +21,7 @@ const homeButtonHandler = () => {
 const logButtonHandler = () => {
   return 
   console.log('This also works')
+  // ironically, neither works because in Navigation.js, these handlers are undefined
 };
 
   return (
