@@ -9,6 +9,6 @@ const Banner = () => {
       <h1>Workout</h1>
       <h1>Coach</h1>
     </React.Fragment>
-  )}
+  )};
 
 export default Banner;

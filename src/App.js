@@ -13,12 +13,14 @@ function App() {
 const [homeButton, setHomeButton] = useState(true);
 const [logButton, setLogButton] = useState(false);
 
-const homeButtonHandler = () => {
+const homeButtonHandler = (event) => {
+  setHomeButton(true)
   return 
   console.log("this works")
 };
 
 const logButtonHandler = () => {
+  setLogButton(true)
   return 
   console.log('This also works')
   // ironically, neither works because in Navigation.js, these handlers are undefined
