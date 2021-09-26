@@ -5,7 +5,21 @@ import App from '../App';
 
 
 const Navigation = (props) => {
+  const [homeButton, setHomeButton] = useState(true);
+  const [logButton, setLogButton] = useState(false);
 
+  const homeButtonHandler = (event) => {
+  setHomeButton(true)
+  // return 
+  console.log("this works");
+};
+
+const logButtonHandler = () => {
+  setLogButton(true)
+  // return 
+  console.log('This also works');
+  // ironically, neither works because in Navigation.js, these handlers are undefined
+};
 
   return (
     <nav className = {classes.nav}>
