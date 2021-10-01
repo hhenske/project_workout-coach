@@ -1,18 +1,28 @@
 import React from 'react';
-import './Log.module.css';
+// import Table from 'react-bootstrap/Table';
 
 
-const Log = () => {
 
+const Log = (props) => {
+    
 
     return (
-    <React.Fragment>
-        <h1 className="title is-1">Workout Log</h1>
-        <p>
-            This will be a dynamic chart.
-        </p>
-    </React.Fragment>
-
+        <React.Fragment>
+            {/* <ReactBootStrap.Table striped bordered hover> */}
+                <thead>
+                    <th>Date</th>
+                    <th>Workout</th>
+                    <th>Time</th>
+                </thead>  
+                
+                    <tr>
+                        <td>{props.date.toISOString()}</td>
+                        <td>{props.activity}</td>
+                        <td>{props.time}</td>
+                    </tr>
+               
+            {/* </ReactBootStrap.Table> */}
+        </React.Fragment>
     )};
 
 

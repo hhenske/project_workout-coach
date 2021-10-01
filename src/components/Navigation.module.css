@@ -2,17 +2,17 @@
     margin: 0;   
     padding: 0;
   }
-
+/* 
 nav {
     text-align: center;
     margin: 5px;
     font-size: 20px;
-    box-shadow: 0px 2px 2px lightgray;
-    cursor: pointer;
-    }
+    /* box-shadow: 0px 2px 2px lightgray; */
+    /* cursor: pointer;
+    } */
 
 
 h2 {
     text-decoration: underline;
-}
+} 
 
