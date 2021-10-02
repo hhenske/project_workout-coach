@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
-// import './App.module.css';
+import './App.module.css';
 // import Navigation from './components/Navigation'; 
 import Form from './components/Form';
 import Banner from './components/Banner';
@@ -37,28 +37,28 @@ const logButtonHandler = () => {
 
 
 const App = () => {
-  const activities = [
-    { 
-      activity: 'cardio',
-      time: '80',
-      date: new Date(2021, 2, 28)
-    },
-    {
-      activity: 'core',
-      time: '40',
-      date: new Date(2021, 2, 29)
-    },
-    {
-      activity: 'yoga',
-      time: '62',
-      date: new Date(2021, 3, 1)
-    },
-    {
-      activity: 'cardio',
-      time: '90',
-      date: new Date(2021, 3, 2)
-    }
-  ];
+  // const activities = [
+  //   { 
+  //     activity: 'cardio',
+  //     time: '80',
+  //     date: new Date(2021, 2, 28)
+  //   },
+  //   {
+  //     activity: 'core',
+  //     time: '40',
+  //     date: new Date(2021, 2, 29)
+  //   },
+  //   {
+  //     activity: 'yoga',
+  //     time: '62',
+  //     date: new Date(2021, 3, 1)
+  //   },
+  //   {
+  //     activity: 'cardio',
+  //     time: '90',
+  //     date: new Date(2021, 3, 2)
+  //   }
+  // ];
 // const [homeButton, setHomeButton] = useState(true);
  const [logButton, setLogButton] = useState(false);
 
@@ -77,7 +77,7 @@ const App = () => {
 // };
 
   return (
-    <React.Fragment className = "container-fluid">
+    <div>
       <div style={{textAlign:"center", 
                   backgroundImage:"linear-gradient(to left, #eea2a2 0%, #bbc1bf 19%, #57c6e1 42%, #b49fda 79%, #7ac5d8 100%)",
                   margin: "0px"
@@ -87,23 +87,29 @@ const App = () => {
         </div>
       </div>
       <div className = "row">
-      <nav>
-        <Navigation className="col-3"/>
+      <nav className = "col-2 no-float bg-info bg-gradient container-fluid">
+        <Navigation />
       </nav>
      {/* In main, will be the logic for displaying home or the workout log in the main section */}
       
-      <main className="col-9"
-      // {...logButton && <Log />}
-      // {...homeButton && <Form />}
-      >  <h1> Workout Log</h1>
+      <main className="col-10 no float bg-secondary bg-gradient d-flex justify-content-center">
+      {/* // {...logButton && <Log />}
+      // {...homeButton && <Form />} */}
+          
+      {/* <h1> Workout Log</h1>
+      <table className="table">
       <Log activity={activities[0].activity} time= {activities[0].time} date={activities[0].date} />
       <Log activity={activities[1].activity} time= {activities[1].time} date={activities[1].date} />
       <Log activity={activities[2].activity} time= {activities[2].time} date={activities[2].date} />
       <Log activity={activities[3].activity} time= {activities[3].time} date={activities[3].date} />
-      <br />    
+      </table> */}
+      <Form />
+      <Log />
+
+      <br />  
       </main>
       </div>
-      </React.Fragment>
+      </div>
   );
 }
 
