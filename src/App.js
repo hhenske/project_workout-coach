@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import { Route } from 'react-router-dom'
 import 'bootstrap/dist/css/bootstrap.css';
-import './App.module.css';
 import Form from './pages/Form';
 import Banner from './components/Banner';
 import Log from './pages/Log';
 import Timer from './pages/Timer';
 import Navigation from './components/Navigation';
+import classes from './App.module.css';
 
 // https://www.youtube.com/watch?v=fL8cFqhTHwA
 
@@ -35,19 +35,6 @@ const App = () => {
     }
   ];
 
-// const homeButtonHandler = (event) => {
-//   setHomeButton(true)
-  
-//   console.log("this works");
-//   console.log(event);
-// };
-
-// const logButtonHandler = () => {
-//   setLogButton(true)
-   
-//   console.log('This also works');
-  
-// };
 
   return (
     <div>
@@ -59,37 +46,40 @@ const App = () => {
           <Banner />
         </div>
       </div>
-      <div className = "row">
-      <nav className = "col-2 no-float bg-info bg-gradient container-fluid">
-        <Navigation />
-      </nav>
+      <div className = {classes.page}>
+        <div className = "row">
+          <nav className = "col-2 no-float bg-info bg-gradient container-fluid">
+            <Navigation />
+          </nav>
     
       
-      <main className="col-10 no float bg-secondary bg-gradient d-flex justify-content-center">
-      {/* // {...logButton && <Log />}
-      // {...homeButton && <Form />} */}
-          
-      {/* <h1> Workout Log</h1> */}
-      {/* <table className="table">
-      <Log activity={activities[0].activity} time= {activities[0].time} date={activities[0].date} />
-      <Log activity={activities[1].activity} time= {activities[1].time} date={activities[1].date} />
-      <Log activity={activities[2].activity} time= {activities[2].time} date={activities[2].date} />
-      <Log activity={activities[3].activity} time= {activities[3].time} date={activities[3].date} />
-      </table> */}
-      <Route path = "/form">
-          <Form />
-      </Route>
-      <Route path = "/timer">
-          <Timer />
-      </Route>
-      <Route path = "/log">
-          <Log />
-      </Route>
+          <main className="col-10 no float bg-secondary bg-gradient d-flex justify-content-center" >
+            {/* // {...logButton && <Log />}
+            // {...homeButton && <Form />} */}
+                
+            {/* <h1> Workout Log</h1> */}
+            {/* <table className="table">
+            <Log activity={activities[0].activity} time= {activities[0].time} date={activities[0].date} />
+            <Log activity={activities[1].activity} time= {activities[1].time} date={activities[1].date} />
+            <Log activity={activities[2].activity} time= {activities[2].time} date={activities[2].date} />
+            <Log activity={activities[3].activity} time= {activities[3].time} date={activities[3].date} />
+            </table> */}
+          <br />
+          <Route path = "/form">
+              <Form />
+          </Route>
+          <Route path = "/timer">
+              <Timer />
+          </Route>
+          <Route path = "/log">
+              <Log />
+          </Route>
 
-      <br />  
-      </main>
+          <br />  
+        </main>
       </div>
-      </div>
+    </div>
+  </div>
   );
 }
 

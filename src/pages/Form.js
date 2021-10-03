@@ -8,8 +8,9 @@ return (
   
     <form>
       <div>
-      <h2>Let's choose a workout!</h2>
-      <br />
+        <br />
+        <h2>Let's choose a workout!</h2>
+        <br />
         <label><h3>What kind of workout would you like today?</h3>
           <select name = "workoutCategory">
                         <option value = "">* Choose an activity *</option>

@@ -5,19 +5,11 @@
     padding: 0;
   }
 
-  /* nav {
-    text-align: left;
-    vertical-align: top;
-    width: 20%;
-    height: 90%;
-    font-size: 10px;
-    background: cadetblue;
-    padding: 0px;
-    position: absolute;
-    left:0;
-    top:8%;
-     
-  } */
+  page {
+    height: 100%;
+    
+  }
+ 
   
   main {
     text-align: center;
