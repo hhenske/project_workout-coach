@@ -19,7 +19,7 @@
      
   } */
   
-  /* main {
+  main {
     text-align: center;
     vertical-align: top;
     width: 80%;
@@ -36,7 +36,7 @@
     border:0px;
     margin: 0px;
     padding: 0px;
-  } */
+  } 
   html,body,.container {
     height:100%;
 }
