@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Route } from 'react-router-dom'
+import { Route, Redirect } from 'react-router-dom'
 import 'bootstrap/dist/css/bootstrap.css';
 import Form from './pages/Form';
 import Banner from './components/Banner';
@@ -65,6 +65,9 @@ const App = () => {
             <Log activity={activities[3].activity} time= {activities[3].time} date={activities[3].date} />
             </table> */}
           <br />
+          <Route exact path="/">
+            <Redirect to="/Form" />
+          </Route>
           <Route path = "/form">
               <Form />
           </Route>

@@ -17,6 +17,8 @@ const Stopwatch = () => {
     }, 1000)
   }
 
+  
+
   const handlePause = () => {
     clearInterval(increment.current)
     setIsPaused(false)
@@ -45,12 +47,17 @@ const Stopwatch = () => {
     return `${getHours} : ${getMinutes} : ${getSeconds}`
   }
 
+  
+
   return (
-    <div className="app">
+    <div>
+      <br /><br />
+      
       <h3>Workout Timer </h3>
-      <div className='stopwatch-card'>
+      <br /><br />
+      <div className='stopwatch-card' className="row mx-auto border border-info rounded-top text-center font-weight-bold">
         <p>{formatTime()}</p>
-        <div className='buttons'>
+        <div className='buttons text-center'>
           {
             !isActive && !isPaused ?
               <button onClick={handleStart}>Start</button>
@@ -62,6 +69,7 @@ const Stopwatch = () => {
           <button onClick={handleReset} disabled={!isActive}>Reset</button>
         </div>
       </div>
+      
     </div>
   );
 }
