@@ -36,12 +36,14 @@ const Log = () => {
 
     return (
         <React.Fragment>
-            
+                
+                <div>
                 <h2>Workout Log</h2>
+                </div>
            
             
-                <p className="col">
-                    <table className="table table-striped table-bordered table-hover">
+                <div className="col">
+                    <table className="table table-striped table-bordered table-hover text-center justify-content-center ">
                         <thead>
                             <tr>
                                 <th scope="col">Date</th>
@@ -56,14 +58,14 @@ const Log = () => {
                                 <td>62</td>
                             </tr>
                             <tr>
-                                <td></td>
-                                <td></td>
-                                <td></td>
+                                <td>October 2, 2021</td>
+                                <td>hike</td>
+                                <td>78</td>
                             </tr>
                             <tr>
-                                <td></td>
-                                <td></td>
-                                <td></td>
+                                <td>October 4, 2021</td>
+                                <td>run</td>
+                                <td>45</td>
                             </tr>
                             <tr>
                                 <td></td>
@@ -83,7 +85,7 @@ const Log = () => {
                             
                         </tbody>
                     </table>
-                 </p>
+                 </div>
                  
             
         </React.Fragment>
