@@ -6,7 +6,7 @@ import Banner from './components/Banner';
 import Log from './pages/Log';
 import Timer from './pages/Timer';
 import Navigation from './components/Navigation';
-import classes from './App.module.css';
+// import classes from './App.module.css';
 
 // https://www.youtube.com/watch?v=fL8cFqhTHwA
 
@@ -46,9 +46,9 @@ const App = () => {
           <Banner />
         </div>
       </div>
-      <div className = {classes.page}>
-        <div className = "row">
-          <nav className = "col-2 no-float bg-info bg-gradient container-fluid">
+      <div className = "container-fluid min-vh=100">
+        <div className = "row justify-content-center min-vh-100">
+          <nav className = "col-2 no-float bg-info bg-gradient container-fluid h=100 flex-grow=2">
             <Navigation />
           </nav>
     

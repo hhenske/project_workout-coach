@@ -9,8 +9,13 @@ const Navigation = () => {
             Home</NavLink>
             </div>
             <br /><br />
-            <div><NavLink to="/Log type=button" className="btn btn-secondary brn-lg btn-block active" role="button" aria-pressed="true">
+            <div><NavLink to="/Log" type="button" className="btn btn-secondary brn-lg btn-block active" role="button" aria-pressed="true">
             Workout Log</NavLink>
+            </div>
+            <br /><br />
+            <div><NavLink to="/Timer" type="button" className="btn btn-secondary brn-lg btn-block active" role="button" aria-pressed="true">
+            Timer</NavLink>
+            
             </div>
         </div>
     )};
