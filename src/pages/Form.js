@@ -7,7 +7,7 @@ const Form = () => {
 return (
   
     <form>
-      <div>
+      <div className="text-center">
         <br />
         <h2>Let's choose a workout!</h2>
         <br />
@@ -21,7 +21,7 @@ return (
             </select></label>
         </div>
         <br />
-        <div>
+        <div className="text-center">
         <label><h4>How are you feeling today?</h4>
           <select name = "workoutIntensity">
                         <option value = "">* Choose one*</option>

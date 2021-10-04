@@ -4,7 +4,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 import Form from './pages/Form';
 import Banner from './components/Banner';
 import Log from './pages/Log';
-import Timer from './pages/Timer';
+import Stopwatch from './pages/Stopwatch';
 import Navigation from './components/Navigation';
 // import classes from './App.module.css';
 
@@ -69,7 +69,7 @@ const App = () => {
               <Form />
           </Route>
           <Route path = "/timer">
-              <Timer />
+              <Stopwatch />
           </Route>
           <Route path = "/log">
               <Log />
