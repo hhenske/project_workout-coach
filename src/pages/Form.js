@@ -28,7 +28,9 @@ return (
         <h2>Let's choose a workout!</h2>
         <br />
         <label><h3>What kind of workout would you like today?</h3>
-          <select name = "workoutCategory" onChange={categoryChoiceHandler}>
+          <select name = "workoutCategory" 
+            onChange={categoryChoiceHandler}
+            >
                         <option value = "">* Choose an activity *</option>
                         <option value="1">Core Exercises</option>
                         <option value="2">Strength Training</option>
@@ -39,14 +41,16 @@ return (
         <br />
         <div className="text-center">
         <label><h4>How are you feeling today?</h4>
-          <select name = "workoutIntensity" onChange={intensityChoiceHandler}>
+          <select name = "workoutIntensity" 
+            onChange={intensityChoiceHandler}
+            >
                         <option value = "">* Choose one*</option>
                         <option value="1">Great! up for a super hard workout!</option>
                         <option value="2">Fine! Ready to work out!</option>
                         <option value="3">Still tired or sore from last workout</option>
                         <option value="4">Extra-fatigued or sick</option>
             </select></label>
-           
+            <button>Submit</button>
           </div>
         </form>
         <div>
