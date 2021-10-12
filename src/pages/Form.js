@@ -1,17 +1,19 @@
 import React, { Fragment, useState } from 'react';
 import classes from './form.module.css';
 import SuggestedWorkout from './SuggestedWorkout';
+import { NavLink } from 'react-router-dom';
+
 
 const Form = () => {
+  const [enteredCategory, setEnteredCategory] = useState('');
+  const [enteredIntensity, setEnteredIntensity] = useState('');
 
   const categoryChoiceHandler = (event) => {
-    const [enteredCategory, setEnteredCategory] = useState('');
     setEnteredCategory(event.target.value);
     
   };
 
   const intensityChoiceHandler = (event) => {
-    const [enteredIntensity, setEnteredIntensity] = useState('');
     setEnteredIntensity(event.target.value);
     
   };
@@ -50,12 +52,28 @@ return (
                         <option value="3">Still tired or sore from last workout</option>
                         <option value="4">Extra-fatigued or sick</option>
             </select></label>
-            <button>Submit</button>
+
+
+            {/* This code only appears after form is submitted and it will be a workout suggestion that user can 
+            accept or have another suggestion */}
+            <div>
+              <br /><br />
+              <button type ="button" className="btn btn-outline-info">Submit</button>
+              <br /><br />
+              <SuggestedWorkout />
+             
+                <NavLink to="Timer" type="button" class="btn btn-info">Yes! This is my workout!</NavLink>
+                {/* this button will link to stopwatch page */}
+                {' '}
+                <NavLink to="Form" button type="button" class="btn btn-info">No, choose another workout
+                </NavLink>
+                {/* This button will choose a different random workout from users input */}
+            </div>
           </div>
         </form>
-        <div>
+        {/* <div>
           <SuggestedWorkout />
-        </div>
+        </div> */}
   </Fragment>
         
       
