@@ -1,7 +1,7 @@
 import React, { Fragment, useState } from 'react';
-import classes from './form.module.css';
+
 import SuggestedWorkout from './SuggestedWorkout';
-import { NavLink } from 'react-router-dom';
+
 
 
 
@@ -9,9 +9,7 @@ const Form = () => {
   const [enteredCategory, setEnteredCategory] = useState('');
   const [enteredIntensity, setEnteredIntensity] = useState('');
   const [formIsValid, setFormIsValid] = useState(true);
-  
-  // Followed max through this, but with the above not commented out, setEnteredCategory has already been defined
-  // and with them commented out, they are not defined
+
 
   const categoryChoiceHandler = (event) => {
     setEnteredCategory(event.target.value);
@@ -24,13 +22,12 @@ const Form = () => {
     
   };
 
-  
 
 
   const formSubmissionHandler = event => {
     event.preventDefault();
 
-    if (enteredCategory != '' || enteredIntensity != '') {
+    if (enteredCategory === '' || enteredIntensity === '') {
       setFormIsValid(false);
       return;
     }
@@ -40,15 +37,16 @@ const Form = () => {
       return;
     }
     
-
+// take these out before 'go time'
     console.log(enteredCategory);
     console.log(enteredIntensity);
     console.log(formIsValid);
    
 
     // on Submit, we want to ...1) store the entered category for adding to the activity log AND for choosing the workout
-                                // 2) randomly choose a workout in the correct categoryChoiceHandler
-    //                          3) make the "How about...." code appear (otherwise, it shouldn't be displayed)
+                                // 2) randomly choose a workout in the correct category and intensity
+    //                          3) make the "How about...." code appear (otherwise, it shouldn't be displayed) (currently it IS displayed 
+                                //  because the form is set as valid from start)
     
   };
 
@@ -88,11 +86,11 @@ return (
             
             <div>
               <br /><br />
-              <button type ="button" className="btn btn-outline-info" onSubmit = {formSubmissionHandler}>Submit</button>
+              <button type ="button" className="btn btn-outline-info" onClick = {formSubmissionHandler}>Submit</button>
               <br /><br />
               
               {formIsValid && <SuggestedWorkout />} 
-              {/* this displays at first render because we start with form being valid.... */}
+              {/* this displays at first render because we start with form being valid.... need to NOT display at beginning */}
              
       
             </div>
