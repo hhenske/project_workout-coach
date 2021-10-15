@@ -4,22 +4,52 @@ import SuggestedWorkout from './SuggestedWorkout';
 import { NavLink } from 'react-router-dom';
 
 
+
 const Form = () => {
   const [enteredCategory, setEnteredCategory] = useState('');
   const [enteredIntensity, setEnteredIntensity] = useState('');
+  const [formIsValid, setFormIsValid] = useState(true);
+  
+  // Followed max through this, but with the above not commented out, setEnteredCategory has already been defined
+  // and with them commented out, they are not defined
 
   const categoryChoiceHandler = (event) => {
     setEnteredCategory(event.target.value);
     
   };
+  
 
   const intensityChoiceHandler = (event) => {
     setEnteredIntensity(event.target.value);
     
   };
 
+  
+
+
   const formSubmissionHandler = event => {
     event.preventDefault();
+
+    if (enteredCategory != '' || enteredIntensity != '') {
+      setFormIsValid(false);
+      return;
+    }
+
+    if (enteredCategory != '' && enteredIntensity != '') {
+      setFormIsValid(true);
+      return;
+    }
+    
+
+    console.log(enteredCategory);
+    console.log(enteredIntensity);
+    console.log(formIsValid);
+   
+
+    // on Submit, we want to ...1) store the entered category for adding to the activity log AND for choosing the workout
+                                // 2) randomly choose a workout in the correct categoryChoiceHandler
+    //                          3) make the "How about...." code appear (otherwise, it shouldn't be displayed)
+    
   };
 
 return (
@@ -52,28 +82,23 @@ return (
                         <option value="3">Still tired or sore from last workout</option>
                         <option value="4">Extra-fatigued or sick</option>
             </select></label>
+            
+            {!formIsValid && alert('Please be to select an option in both fields')}
 
-
-            {/* This code only appears after form is submitted and it will be a workout suggestion that user can 
-            accept or have another suggestion */}
+            
             <div>
               <br /><br />
-              <button type ="button" className="btn btn-outline-info">Submit</button>
+              <button type ="button" className="btn btn-outline-info" onSubmit = {formSubmissionHandler}>Submit</button>
               <br /><br />
-              <SuggestedWorkout />
+              
+              {formIsValid && <SuggestedWorkout />} 
+              {/* this displays at first render because we start with form being valid.... */}
              
-                <NavLink to="Timer" type="button" class="btn btn-info">Yes! This is my workout!</NavLink>
-                {/* this button will link to stopwatch page */}
-                {' '}
-                <NavLink to="Form" button type="button" class="btn btn-info">No, choose another workout
-                </NavLink>
-                {/* This button will choose a different random workout from users input */}
+      
             </div>
           </div>
         </form>
-        {/* <div>
-          <SuggestedWorkout />
-        </div> */}
+        
   </Fragment>
         
       
