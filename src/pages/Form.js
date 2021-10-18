@@ -8,17 +8,23 @@ import SuggestedWorkout from './SuggestedWorkout';
 const Form = () => {
   const [enteredCategory, setEnteredCategory] = useState('');
   const [enteredIntensity, setEnteredIntensity] = useState('');
-  const [formIsValid, setFormIsValid] = useState(true);
+  const [formIsValid, setFormIsValid] = useState(false);
+  const [submitTouched, setSubmitTouched] = useState(false);
+  // const [enteredIntensityTouched, setEnteredIntensityTouched] = useState(false);
 
+  
 
   const categoryChoiceHandler = (event) => {
     setEnteredCategory(event.target.value);
     
+    
   };
+  
   
 
   const intensityChoiceHandler = (event) => {
     setEnteredIntensity(event.target.value);
+    
     
   };
 
@@ -27,12 +33,15 @@ const Form = () => {
   const formSubmissionHandler = event => {
     event.preventDefault();
 
+    setSubmitTouched(true);
+    
+
     if (enteredCategory === '' || enteredIntensity === '') {
       setFormIsValid(false);
       return;
     }
 
-    if (enteredCategory != '' && enteredIntensity != '') {
+    if (enteredCategory !== '' && enteredIntensity !== '') {
       setFormIsValid(true);
       return;
     }
@@ -49,6 +58,8 @@ const Form = () => {
                                 //  because the form is set as valid from start)
     
   };
+
+  let formIsInvalid = !formIsValid  && submitTouched;
 
 return (
   <Fragment>
@@ -81,15 +92,16 @@ return (
                         <option value="4">Extra-fatigued or sick</option>
             </select></label>
             
-            {!formIsValid && alert('Please be to select an option in both fields')}
-
+            {formIsInvalid && alert('Please be sure to select an option in both fields')}
             
             <div>
               <br /><br />
               <button type ="button" className="btn btn-outline-info" onClick = {formSubmissionHandler}>Submit</button>
               <br /><br />
+            
               
-              {formIsValid && <SuggestedWorkout />} 
+              
+              {!formIsInvalid && <SuggestedWorkout category={enteredCategory} intensity={enteredIntensity}/>} 
               {/* this displays at first render because we start with form being valid.... need to NOT display at beginning */}
              
       

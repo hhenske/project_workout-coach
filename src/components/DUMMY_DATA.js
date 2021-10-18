@@ -138,6 +138,13 @@ const DUMMY_DATA = () => {
     ]
 
     // yoga API https://github.com/Stuwert/yoga-builder
+    // strength exercise database: https://mtntactical.com/category/exercises/ (list of exercise links with videos attached)
+    // https://www.programmableweb.com/api/exercisedb
+         // API Endpoint https://exercisedb.p.rapidapi.com/exercises
+        // API Portal / Home Page ** https://rapidapi.com/justin-WFnsXH_t6/api/exercisedb
+
 
     return <h3>Workouts</h3>
 }
+
+export default DUMMY_DATA
