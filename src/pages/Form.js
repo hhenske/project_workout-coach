@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from 'react';
+import React, { Fragment, useState, useEffect } from 'react';
 
 import SuggestedWorkout from './SuggestedWorkout';
 
@@ -12,7 +12,13 @@ const Form = () => {
   const [submitTouched, setSubmitTouched] = useState(false);
   // const [enteredIntensityTouched, setEnteredIntensityTouched] = useState(false);
 
+  let formIsInvalid = !formIsValid  && submitTouched;
   
+  useEffect(() => {
+    if (formIsInvalid) {
+      alert("Please be sure to select an option in both fields")
+    }
+  } , [submitTouched, formIsInvalid])
 
   const categoryChoiceHandler = (event) => {
     setEnteredCategory(event.target.value);
@@ -27,8 +33,6 @@ const Form = () => {
     
     
   };
-
-
 
   const formSubmissionHandler = event => {
     event.preventDefault();
@@ -59,7 +63,7 @@ const Form = () => {
     
   };
 
-  let formIsInvalid = !formIsValid  && submitTouched;
+  
 
 return (
   <Fragment>
@@ -92,7 +96,7 @@ return (
                         <option value="4">Extra-fatigued or sick</option>
             </select></label>
             
-            {formIsInvalid && alert('Please be sure to select an option in both fields')}
+            
             
             <div>
               <br /><br />
@@ -101,9 +105,8 @@ return (
             
               
               
-              {!formIsInvalid && <SuggestedWorkout category={enteredCategory} intensity={enteredIntensity}/>} 
-              {/* this displays at first render because we start with form being valid.... need to NOT display at beginning */}
-             
+              {formIsValid && <SuggestedWorkout category={enteredCategory} intensity={enteredIntensity}/>} 
+              
       
             </div>
           </div>

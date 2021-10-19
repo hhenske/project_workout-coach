@@ -1,4 +1,4 @@
-const DUMMY_DATA = () => {
+const CardioWorkout = () => {
     const easyCardio = [
         {
         id: '101',
@@ -144,7 +144,7 @@ const DUMMY_DATA = () => {
         // API Portal / Home Page ** https://rapidapi.com/justin-WFnsXH_t6/api/exercisedb
 
 
-    return <h3>Workouts</h3>
+    return <p>Cardio Workout</p>
 }
 
-export default DUMMY_DATA
+export default CardioWorkout;

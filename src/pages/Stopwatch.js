@@ -36,6 +36,9 @@ const Stopwatch = () => {
           <button onClick={() => setTimerOn(true)}>Start</button>
         )}
         {timerOn && <button onClick={() => setTimerOn(false)}>Stop</button>}
+          {/* Here, I need to save the time and push it to the log entry for 
+          the current workout ... variable name is time */}
+
         {!timerOn && time > 0 && (
           <button onClick={() => setTime(0)}>Reset</button>
         )}

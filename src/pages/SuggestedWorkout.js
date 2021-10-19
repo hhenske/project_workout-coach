@@ -1,7 +1,8 @@
 import React, { Component, Fragment } from 'react';
 import { NavLink } from 'react-router-dom';
-// import DUMMY_DATA from '../components/DUMMY_DATA';
+import CardioWorkout from '../components/CardioWorkout';
 import Form from './Form';
+
 
 
 var axios = require("axios").default;
@@ -30,10 +31,9 @@ axios.request(options).then(function (response) {
 
 
 
-
 const SuggestedWorkout = (props) => {
 
-    
+
 
     if (props.category === 3 && props.intensity === 1) {
         // randomly choose a workout from the hardCardio Object, located in DUMMY_DATA
@@ -91,9 +91,12 @@ const SuggestedWorkout = (props) => {
             {/* This code will be dynamic...it'll be the randomly chosen workout from the category the user chose on the form */}
             <div>
                 <p>{props.category}</p>
+                <p>{CardioWorkout[1]}</p>
+                <p>{response.data[4].name, response.data[4].gifUrl, response.data[4].bodyPart}</p>
                 <p>{props.intensity}</p>
-                {/* <p>Exercise: {strengthData.data[4].name} Photo: {strengthData.data[4].gifUrl} Target Muscle: {strengthData.data[4].bodyPart}</p>
                 
+                {/* <p>Exercise: {strengthData.data[4].name} Photo: {strengthData.data[4].gifUrl} Target Muscle: {strengthData.data[4].bodyPart}</p>
+               
                  */}
             </div>
             <br /><br />
