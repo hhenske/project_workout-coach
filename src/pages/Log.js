@@ -1,5 +1,7 @@
+import { distanceAndSkiddingToXY } from '@popperjs/core/lib/modifiers/offset';
 import React, { useState } from 'react';
-
+import Stopwatch from './Stopwatch';
+import Form from './Form';
 
 
 
@@ -7,7 +9,7 @@ import React, { useState } from 'react';
 const Log = () => {
 
     
-
+    // hard coded data to use for design. Remove when not needed
    const activities = [
         { 
           activity: 'cardio',

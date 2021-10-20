@@ -6,29 +6,31 @@ import { NavLink } from 'react-router-dom';
 
 
 const SuggestedWorkout = (props) => {
+    const strengthData = {};
 
     // accesses the API for strenth execises:
-    var axios = require("axios").default;
+    const axios = require("axios").default;
 
-    var options = {
-    method: 'GET',
-    url: 'https://exercisedb.p.rapidapi.com/exercises',
-    headers: {
-        'x-rapidapi-host': 'exercisedb.p.rapidapi.com',
-        'x-rapidapi-key': '226f1f3dc3msh4967f81ea387d7cp16bcfdjsn289968c31ba3'
-    }
-    };
+    const options = {
+        method: 'GET',
+        url: 'https://exercisedb.p.rapidapi.com/exercises',
+        headers: {
+            'x-rapidapi-host': 'exercisedb.p.rapidapi.com',
+            'x-rapidapi-key': '226f1f3dc3msh4967f81ea387d7cp16bcfdjsn289968c31ba3'
+        }
+        };
 
     axios.request(options).then(function (response) {
         console.log(response.data[4].name, response.data[4].gifUrl, response.data[4].bodyPart);
         // console.log works meaning the address is right, the key is right and this is how to access the things I need
         // but it DOESN'T work in return, where I need it.  Do I need to store it in a variable? or pass props?
+        strengthData=response.data;
     }).catch(function (error) {
         console.error(error);
     });
 
     // data for cardio exercises:
-
+    
     const easyCardio = [
         {
         id: '101',
@@ -220,13 +222,11 @@ const SuggestedWorkout = (props) => {
             {/* This code will be dynamic...it'll be the randomly chosen workout from the category the user chose on the form */}
             <div>
                 <p>{props.category}</p>
-                
-                {/* <p>{response.data[4].name, response.data[4].gifUrl, response.data[4].bodyPart}</p> */}
+                <p>{hardCardio[0].act}</p>
+                <p>{strengthData[4].name, strengthData[4].gifUrl, strengthData[4].bodyPart}</p>
                 <p>{props.intensity}</p>
                 
-                {/* <p>Exercise: {strengthData.data[4].name} Photo: {strengthData.data[4].gifUrl} Target Muscle: {strengthData.data[4].bodyPart}</p>
-               
-                 */}
+                
             </div>
             <br /><br />
             <NavLink to="Timer" type="button" class="btn btn-info">Yes! Ready to work out!</NavLink>
