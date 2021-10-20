@@ -1,8 +1,7 @@
 import React, { Fragment, useState, useEffect } from 'react';
-
 import SuggestedWorkout from './SuggestedWorkout';
 
-
+// Don't touch this component.  It is done
 
 
 const Form = () => {
@@ -50,16 +49,10 @@ const Form = () => {
       return;
     }
     
-// take these out before 'go time'
-    console.log(enteredCategory);
-    console.log(enteredIntensity);
-    console.log(formIsValid);
-   
 
-    // on Submit, we want to ...1) store the entered category for adding to the activity log AND for choosing the workout
-                                // 2) randomly choose a workout in the correct category and intensity
-    //                          3) make the "How about...." code appear (otherwise, it shouldn't be displayed) (currently it IS displayed 
-                                //  because the form is set as valid from start)
+    // on Submit, we want to ...1) store the entered category for adding to the activity log AND for choosing the workout DONE w/state and sent to Suggestedworkout through props
+                                // 2) randomly choose a workout in the correct category and intensity - to be done in SuggestedWorkout component
+    //                          3) make the "How about...." code appear (otherwise, it shouldn't be displayed) (DONE)
     
   };
 
@@ -95,9 +88,6 @@ return (
                         <option value="3">Still tired or sore from last workout</option>
                         <option value="4">Extra-fatigued or sick</option>
             </select></label>
-            
-            
-            
             <div>
               <br /><br />
               <button type ="button" className="btn btn-outline-info" onClick = {formSubmissionHandler}>Submit</button>
