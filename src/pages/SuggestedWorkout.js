@@ -1,36 +1,40 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component, Fragment, useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 
 
-
+// this component takes the enteredCategory and the enteredIntensity and suggests a workout
 
 
 const SuggestedWorkout = (props) => {
-    const strengthData = {};
+    const [strengthData, setStrengthData] = useState([]);
+    const [cardioData, setCardioData] = useState([]);
+    const [yogaData, setYogaData] = useState([]);
+    const [absData, setAbsData] = useState([]);
 
-    // accesses the API for strenth execises:
-    const axios = require("axios").default;
-
-    const options = {
-        method: 'GET',
-        url: 'https://exercisedb.p.rapidapi.com/exercises',
-        headers: {
-            'x-rapidapi-host': 'exercisedb.p.rapidapi.com',
-            'x-rapidapi-key': '226f1f3dc3msh4967f81ea387d7cp16bcfdjsn289968c31ba3'
-        }
-        };
-
-    axios.request(options).then(function (response) {
-        console.log(response.data[4].name, response.data[4].gifUrl, response.data[4].bodyPart);
-        // console.log works meaning the address is right, the key is right and this is how to access the things I need
-        // but it DOESN'T work in return, where I need it.  Do I need to store it in a variable? or pass props?
-        strengthData=response.data;
-    }).catch(function (error) {
-        console.error(error);
-    });
-
-    // data for cardio exercises:
+    // // accesses the API for strenth execises:
+    // const axios = require("axios").default;
     
+    // const options = {
+    //     method: 'GET',
+    //     url: 'https://exercisedb.p.rapidapi.com/exercises',
+    //     headers: {
+    //         'x-rapidapi-host': 'exercisedb.p.rapidapi.com',
+    //         'x-rapidapi-key': '226f1f3dc3msh4967f81ea387d7cp16bcfdjsn289968c31ba3'
+    //     }
+    //     };
+
+    // axios.request(options).then(function (response) {
+    //     console.log(response.data[4].name, response.data[4].gifUrl, response.data[4].bodyPart);
+    //     // console.log works meaning the address is right, the key is right and this is how to access the things I need
+    //     // but it DOESN'T work in return, where I need it.  Do I need to store it in a variable? or pass props?
+    //     setStrengthData([response]);
+    // }).catch(function (error) {
+    //     console.error(error);
+    // });
+    
+      
+    // data for cardio exercises:
+
     const easyCardio = [
         {
         id: '101',
@@ -165,20 +169,26 @@ const SuggestedWorkout = (props) => {
             }
     ]
 
-
+    
+    
     if (props.category === 3 && props.intensity === 1) {
-        // randomly choose a workout from the hardCardio Object, located in DUMMY_DATA
+        // randomly choose a workout from the hardCardio Object,
         // suggestion =
+        //random works on arrays, so the array is of objects.... what will be randomized? what will be returned?
+        setCardioData(hardCardio.act[Math.floor(Math.random() * hardCardio.length)]);
     }
+    console.log('workoutSuggestion')
 
     if (props.category === 3 && props.intesity === 2) {
         // randomly choose a workout from the medCardio Object, located in DUMMY_DATA
         // suggestion =
+        // workoutSuggestion = medCardio[Math.floor(Math.random() * hardCardio.length)];
     }
 
     if (props.category === 3 && props.intensity > 2) {
         // randomly choose a workout from the easyCardio Object, locatin in DUMMY_DATA)
         // suggestion = 
+        // workoutSuggestion = easyCardio[Math.floor(Math.random() * hardCardio.length)];
     }
 
     if (props.category === 2 && props.intensity === 1) {
@@ -210,8 +220,6 @@ const SuggestedWorkout = (props) => {
         // yoga routine
         // suggestion = 
     }
-    
-
 
 
 
@@ -222,8 +230,10 @@ const SuggestedWorkout = (props) => {
             {/* This code will be dynamic...it'll be the randomly chosen workout from the category the user chose on the form */}
             <div>
                 <p>{props.category}</p>
-                <p>{hardCardio[0].act}</p>
-                <p>{strengthData[4].name, strengthData[4].gifUrl, strengthData[4].bodyPart}</p>
+                {/* <p>{workoutSuggestion}</p> */}
+                <p>{hardCardio[2]}</p>
+                {/* <p>{strengthData[3].name}</p> */}
+                <p>cardioData</p>
                 <p>{props.intensity}</p>
                 
                 
