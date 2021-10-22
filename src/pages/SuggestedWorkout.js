@@ -10,27 +10,33 @@ const SuggestedWorkout = (props) => {
     const [cardioData, setCardioData] = useState([]);
     const [yogaData, setYogaData] = useState([]);
     const [absData, setAbsData] = useState([]);
+    const [workoutSuggestion, setWorkoutSuggestion] = useState();
 
+    let strengthExercises = {}
+  
     // // accesses the API for strenth execises:
-    // const axios = require("axios").default;
     
-    // const options = {
-    //     method: 'GET',
-    //     url: 'https://exercisedb.p.rapidapi.com/exercises',
-    //     headers: {
-    //         'x-rapidapi-host': 'exercisedb.p.rapidapi.com',
-    //         'x-rapidapi-key': '226f1f3dc3msh4967f81ea387d7cp16bcfdjsn289968c31ba3'
-    //     }
-    //     };
+    useEffect(() => {
+        const axios = require("axios").default;
+        
+        const options = {
+            method: 'GET',
+            url: 'https://exercisedb.p.rapidapi.com/exercises',
+            headers: {
+                'x-rapidapi-host': 'exercisedb.p.rapidapi.com',
+                'x-rapidapi-key': '226f1f3dc3msh4967f81ea387d7cp16bcfdjsn289968c31ba3'
+            }
+            };
 
-    // axios.request(options).then(function (response) {
-    //     console.log(response.data[4].name, response.data[4].gifUrl, response.data[4].bodyPart);
-    //     // console.log works meaning the address is right, the key is right and this is how to access the things I need
-    //     // but it DOESN'T work in return, where I need it.  Do I need to store it in a variable? or pass props?
-    //     setStrengthData([response]);
-    // }).catch(function (error) {
-    //     console.error(error);
-    // });
+        axios.request(options).then(function (response) {
+            // console.log(response.data[4].name, response.data[4].gifUrl, response.data[4].bodyPart);
+    
+            setStrengthData(response);
+        
+        }).catch(function (error) {
+            console.error(error);
+        });
+    }, []);
     
       
     // data for cardio exercises:
@@ -169,59 +175,59 @@ const SuggestedWorkout = (props) => {
             }
     ]
 
+        if (props.category === 3 && props.intensity === 1) {
+            // randomly choose a workout from the hardCardio Object,
+            // suggestion =
+            //random works on arrays, so the array is of objects.... what will be randomized? what will be returned?
+            setWorkoutSuggestion(hardCardio[Math.floor(Math.random() * hardCardio.length)]);
+        }
+        // console.log('workoutSuggestion')
+
+        if (props.category === 3 && props.intesity === 2) {
+            // randomly choose a workout from the medCardio Object, located in DUMMY_DATA
+            // suggestion =
+            // workoutSuggestion = medCardio[Math.floor(Math.random() * hardCardio.length)];
+        }
+
+        if (props.category === 3 && props.intensity > 2) {
+            // randomly choose a workout from the easyCardio Object, locatin in DUMMY_DATA)
+            // suggestion = 
+            // workoutSuggestion = easyCardio[Math.floor(Math.random() * hardCardio.length)];
+        }
+
+        if (props.category === 2 && props.intensity === 1) {
+        //    strength exersize routine
+            // suggestion =\
+            setWorkoutSuggestion(strengthData.data[Math.floor(Math.random() * strengthData.data.length)]);
+        
+        }
+
+        if (props.category === 2 && props.intesity === 2) {
+            // strength exersize routine
+            // suggestion =
+        }
+
+        if (props.category === 1 && props.intesity <= 2) {
+            // core exersize routine
+            // suggestion =
+        }
+
+        if (props.category === 1 && props.intensity > 2) {
+            // core exersize routine
+            // suggestion = 
+        }  
+
+        if (props.category === 4 && props.intesity <= 2) {
+        //    yoga routine
+            // suggestion =
+        }
+
+        if (props.category === 4 && props.intensity > 2) {
+            // yoga routine
+            // suggestion = 
+        }
     
-    
-    if (props.category === 3 && props.intensity === 1) {
-        // randomly choose a workout from the hardCardio Object,
-        // suggestion =
-        //random works on arrays, so the array is of objects.... what will be randomized? what will be returned?
-        setCardioData(hardCardio.act[Math.floor(Math.random() * hardCardio.length)]);
-    }
-    console.log('workoutSuggestion')
-
-    if (props.category === 3 && props.intesity === 2) {
-        // randomly choose a workout from the medCardio Object, located in DUMMY_DATA
-        // suggestion =
-        // workoutSuggestion = medCardio[Math.floor(Math.random() * hardCardio.length)];
-    }
-
-    if (props.category === 3 && props.intensity > 2) {
-        // randomly choose a workout from the easyCardio Object, locatin in DUMMY_DATA)
-        // suggestion = 
-        // workoutSuggestion = easyCardio[Math.floor(Math.random() * hardCardio.length)];
-    }
-
-    if (props.category === 2 && props.intensity === 1) {
-    //    strength exersize routine
-        // suggestion =
-    }
-
-    if (props.category === 2 && props.intesity === 2) {
-        // strength exersize routine
-        // suggestion =
-    }
-
-    if (props.category === 1 && props.intesity <= 2) {
-        // core exersize routine
-        // suggestion =
-    }
-
-    if (props.category === 1 && props.intensity > 2) {
-        // core exersize routine
-        // suggestion = 
-    }  
-
-    if (props.category === 4 && props.intesity <= 2) {
-    //    yoga routine
-        // suggestion =
-    }
-
-    if (props.category === 4 && props.intensity > 2) {
-        // yoga routine
-        // suggestion = 
-    }
-
-
+    // console.log(strengthData.data);
 
     return (
         <Fragment>
@@ -229,20 +235,28 @@ const SuggestedWorkout = (props) => {
             <br />
             {/* This code will be dynamic...it'll be the randomly chosen workout from the category the user chose on the form */}
             <div>
+                {props.category == 3 && props.intensity == 1 ? <p>Hard Cardio</p> : null}
+                {props.category == 3 && props.intensity == 2 ? <p>Medium Cardio</p> : null}
+                {props.category == 3 && props.intensity > 2 ? <p>Easy Cardio</p> : null}
+                {props.category == 2 && props.intensity <= 2 ? <p>Hard Strength Training</p> : null}
+                {props.category == 2 && props.intensity >= 3 ? <p>Easy Strength Training</p> : null}
+                {props.category == 1 && props.intensity <= 2 ? <p>Hard core exercises</p> : null}
+                {props.category == 1 && props.intensity >= 3 ? <p>Easy core exercises</p> : null}
+                {props.category == 4 && props.intensity == 1 ? <p>Strength Yoga workout</p> : null}
+                {props.category == 4 && props.intensity == 2 ? <p>Yoga Workout</p> : null}
+                {props.category == 4 && props.intensity > 2 ? <p>Restaurative Yoga</p> : null}
+
+
                 <p>{props.category}</p>
-                {/* <p>{workoutSuggestion}</p> */}
-                <p>{hardCardio[2]}</p>
-                {/* <p>{strengthData[3].name}</p> */}
-                <p>cardioData</p>
                 <p>{props.intensity}</p>
                 
                 
             </div>
             <br /><br />
-            <NavLink to="Timer" type="button" class="btn btn-info">Yes! Ready to work out!</NavLink>
+            <NavLink to="Timer" type="button" className="btn btn-info">Yes! Ready to work out!</NavLink>
                
                 {' '}
-                <NavLink to="Form" button type="button" class="btn btn-info">No, choose another workout
+                <NavLink to="Form" type="button" className="btn btn-info">No, choose another workout
                 </NavLink>
 
         </Fragment>
