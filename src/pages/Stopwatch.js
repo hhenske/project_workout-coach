@@ -5,6 +5,7 @@ import React, { useState } from "react";
 const Stopwatch = () => {
   const [time, setTime] = React.useState(0);
   const [timerOn, setTimerOn] = React.useState(false);
+  const [stopTime, setStopTime] = React.useState();
 
   React.useEffect(() => {
     let interval = null;
@@ -19,6 +20,13 @@ const Stopwatch = () => {
 
     return () => clearInterval(interval);
   }, [timerOn]);
+
+  const saveTimeOnStopHandler = (event) => {
+    setStopTime(event.target.value);
+
+  }
+
+
 
   return (
     <div style={{"font-size":"40px"}}>
@@ -35,7 +43,7 @@ const Stopwatch = () => {
         {!timerOn && time === 0 && (
           <button onClick={() => setTimerOn(true)}>Start</button>
         )}
-        {timerOn && <button onClick={() => setTimerOn(false)}>Stop</button>}
+        {timerOn && <button onClick={() => setTimerOn(false)} onClick={saveTimeOnStopHandler}>Stop</button>}
           {/* Here, I need to save the time and push it to the log entry for 
           the current workout ... variable name is time */}
 
@@ -44,6 +52,8 @@ const Stopwatch = () => {
         )}
         {!timerOn && time > 0 && (
           <button onClick={() => setTimerOn(true)}>Resume</button>
+        
+        
         )}
       </div>
     </div>

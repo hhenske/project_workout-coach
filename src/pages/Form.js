@@ -66,7 +66,8 @@ return (
         <h2>Let's choose a workout!</h2>
         <br />
         <label><h3>What kind of workout would you like today?</h3>
-          <select name = "workoutCategory" 
+          <select 
+            name = "workoutCategory" 
             onChange={categoryChoiceHandler}
             >
                         <option value = "">* Choose an activity *</option>

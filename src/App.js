@@ -12,28 +12,7 @@ import Navigation from './components/Navigation';
 
 
 const App = () => {
-  const activities = [
-    { 
-      activity: 'cardio',
-      time: '80',
-      date: new Date(2021, 2, 28)
-    },
-    {
-      activity: 'core',
-      time: '40',
-      date: new Date(2021, 2, 29)
-    },
-    {
-      activity: 'yoga',
-      time: '62',
-      date: new Date(2021, 3, 1)
-    },
-    {
-      activity: 'cardio',
-      time: '90',
-      date: new Date(2021, 3, 2)
-    }
-  ];
+  
 
 
   return (
