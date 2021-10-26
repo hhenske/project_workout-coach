@@ -1,9 +1,10 @@
-import { useState } from 'react';
+import { useState, Fragment } from 'react';
 
 const CardioSuggestion = (props) => {
 
-    const [cardioSuggestion, setCardioSuggestion] = useState();
-    let hardCardioSuggestion = '';
+    // const [cardioSuggestion, setCardioSuggestion] = useState();
+    
+    let randomIndex = Math.floor(Math.random() * 5);
      // data for cardio exercises:
 
      const easyCardio = [
@@ -140,24 +141,29 @@ const CardioSuggestion = (props) => {
             }
     ]
 
-        const userChoiceHandler = (props) => {
-            if (props.category == 3 && props.intensity == 1) {
-               setCardioSuggestion(hardCardio[Math.floor(Math.random() * 5)])
-            }
+        // const userChoiceHandler = (props) => {
+        //     if (props.intensity == 1) {
+        //        setCardioSuggestion(hardCardio[randomIndex])
+        //     } cant get that to work
         
-        }
+        // }
     
-        console.log(cardioSuggestion)
+        
     // const EasyCardioSuggestion = () => {
     //     easyCardioIndex = Math.floor(Math.random() * 5)
     //     easyCardioSuggestion = easyCardio[easyCardioIndex]
        
 
         return (
-            <p>cardio workout</p>
-                /* What I REALLY want in the <p> is a randomly chosen workout from that category */
-                // {props.category == 3 && props.intensity == 2 ? <p>Medium Cardio</p> : null}
-                // {props.category == 3 && props.intensity > 2 ? <p>Easy Cardio</p> : null}
+            <Fragment>
+            
+                <p>cardio workout</p>
+           
+                {/* What I REALLY want in the <p> is a randomly chosen workout from that category */}
+                {props.intensity == 1 ? <p>{hardCardio[0]}</p> : null}
+                {props.intensity > 1 && props.intensity < 3 ? <p>{medCardio[0]}</p> : null}
+                {props.intensity > 2 ? <p>{hardCardio[0]} </p> : null}
+            </Fragment>
         )
 
 
