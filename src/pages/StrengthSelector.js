@@ -10,11 +10,15 @@ const StrengthSelector = (props) => {
 
     return (
         <Fragment>
-            <ul>
-                <li>{props.name}</li> 
-                <li>{props.target}</li>
-                <li>{props.gifUrl}</li>
-            </ul>
+            <table className="table border border-dark table-hover text-center justify-content-center ">
+                <thead>
+                    <th>{props.name}</th>
+                </thead> 
+                <tbody>
+                    <tr>{props.target}</tr>
+                    <tr><img src={props.gifUrl} /></tr>
+                </tbody>
+            </table>
         </Fragment>
     )
 }

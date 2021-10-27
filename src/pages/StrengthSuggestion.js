@@ -72,25 +72,22 @@ const StrengthSuggestion = (props) => {
     return (
         
         <Fragment>
-            <h3>Strength Exercises Suggestions</h3>
-             {strengthData.length != 0 ? 
-                <ul>
-                randomIndexArray.map((exercise) =>  {
+            <h1>Strength Exercises:</h1>
+            <p>Do 3 repetitions, 2 if you need an easier/shorter workout</p>
+            
+            {strengthData.length != 0 ? 
+                <ol>
+                {randomIndexArray.map((exercise) =>  
                      <StrengthSelector key={exercise.name}
                         name={exercise.name}
                         target={exercise.target}
-                        gifUrl={exercise.gifUrl} 
-                    
-               
-                /> : null
-            
-             </ul>
-            
-                    // name={randomIndexArray[0].name}
-                    // target={randomIndexArray[0].target}
-                    // gifUrl={randomIndexArray[0].gifUrl} */}
-                    
-             
+                        gifUrl={exercise.gifUrl}/> 
+                )}
+                
+                
+                </ol>
+               : null}
+                
         </Fragment>
     )
 }
