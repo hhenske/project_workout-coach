@@ -53,13 +53,13 @@ const StrengthSuggestion = (props) => {
     function randomIndex() {
         if (strengthData.length !== 0 && props.intensity > 2) {
             for (let i=0; i < 8; i++) {
-                randomIndex= Math.floor(Math.random() * 1325);
+                randomIndex= Math.floor(Math.random() * 1326);
                 randomIndexArray.push(strengthData[randomIndex])
             }
         }
         if (strengthData.length != 0 && props.intensity < 3) {
             for (let i=0; i < 6; i++) {
-                randomIndex= Math.floor(Math.random() * 1325);
+                randomIndex= Math.floor(Math.random() * 1326);
                 randomIndexArray.push(strengthData[randomIndex])
             }
         }
@@ -72,7 +72,7 @@ const StrengthSuggestion = (props) => {
         
         <Fragment>
             <h1>Strength Exercises:</h1>
-            <p>Do 3 repetitions, 2 if you need an easier/shorter workout</p>
+            <p>Do 10-20 repetitions 3 times, 2 if you need an easier/shorter workout</p>
             
             {strengthData.length != 0 ? 
                 <ol>

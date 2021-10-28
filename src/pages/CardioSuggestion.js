@@ -196,7 +196,7 @@ const CardioSuggestion = (props) => {
                 {/* <p>{workoutSuggestion.act}</p> */}
                 <table className="table border border-dark table-hover text-center justify-content-center ">
                 <thead>
-                    <td className="font-weight-bold">{workoutSuggestion.act}</td>
+                    <tr><td className="font-weight-bold">{workoutSuggestion.act}</td></tr>
                 </thead> 
                 <tbody>
                     <tr>{workoutSuggestion.type}</tr>

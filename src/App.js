@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Route, Redirect } from 'react-router-dom'
 import 'bootstrap/dist/css/bootstrap.css';
 import Form from './pages/Form';
@@ -6,7 +6,7 @@ import Banner from './components/Banner';
 import Log from './pages/Log';
 import Stopwatch from './pages/Stopwatch';
 import Navigation from './components/Navigation';
-// import classes from './App.module.css';
+
 
 // https://www.youtube.com/watch?v=fL8cFqhTHwA
 

@@ -28,14 +28,14 @@ const SuggestedWorkout = (props) => {
           setFormIsValid(false);
           return;
         }
-    
+        
         if (enteredCategory !== '' && enteredIntensity !== '') {
           setFormIsValid(true);
           return;
         }
         
-        setEnteredIntensity('');
-        setEnteredCategory('');
+        // setEnteredIntensity('');
+        // setEnteredCategory('');
        
     }
 
@@ -65,7 +65,7 @@ const SuggestedWorkout = (props) => {
             <br /><br />
             <NavLink to="Timer" type="button" className="btn btn-info">Yes! Ready to work out!</NavLink>
                
-                {/* {' '} */}
+                {' '} 
                 <NavLink to="Form" type="button" className="btn btn-info" onClick = {formSubmissionHandler}>No, choose another workout
                 </NavLink>
                 {/* I would like this button to rerun the submit and suggested workout so a new randomized workout renders*/}

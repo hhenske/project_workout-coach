@@ -10,14 +10,14 @@ const CoreSelector = (props) => {
 
     return (
         <Fragment>
-            <table className="table border border-dark table-hover text-center justify-content-center ">
-                <thead>
-                    <td className="font-weight-bold">{props.name}</td>
-                </thead> 
-                <tbody>
+            <table className="table border border-dark table-hover justify-content-center ">
+                <tr>
+                    <th className="font-weight-bold">{props.name}</th>
+                </tr>
+               
                     <tr>{props.target}</tr>
                     <tr><img src={props.gifUrl} /></tr>
-                </tbody>
+                
             </table>
         </Fragment>
     )

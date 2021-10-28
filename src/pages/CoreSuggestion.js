@@ -32,47 +32,48 @@ const CoreSuggestion = (props) => {
         });
     }, []);
 
-    
-    // if (coreData.length != 0) {
-    //     console.log(coreData[0].target);
-    //     console.log(props.intensity);
-    // } both work
+    console.log(coreData.length)
+    // returns 1327
+    if (coreData.length != 0) {
+        console.log(coreData[0].target);
+        console.log(props.intensity);
+    } 
+    // both work
 
-//     function createCoreArray() {
-//         if (coreData.length !== 0 && props.intensity > 2)  {
-//             while (coreExerciseArray.length < 5) {
-//             if (coreData[randomIndex].target==='abs' || coreData[randomIndex].target==='adductors' || coreData[randomIndex].target==='glutes' || coreData[randomIndex].target==='spine') {
-//                 randomIndex= Math.floor(Math.random() * 1325);
-                
-//                 coreExerciseArray.push(coreData[randomIndex])
-//             }
-//         }
-//     }
+    function createCoreArray() {
+        if (coreData.length !== 0 && props.intensity > 2)  {
+            while (coreExerciseArray.length < 4) {
+                randomIndex= Math.floor(Math.random() * 1326);
+                if (coreData[randomIndex].target==='abs' || coreData[randomIndex].target==='adductors' || coreData[randomIndex].target==='glutes' || coreData[randomIndex].target==='spine') {
+                    coreExerciseArray.push(coreData[randomIndex])
+            }
+        }
+    }
         
-//         if (coreData.length !== 0 && props.intensity < 3) {
-//             while (coreExerciseArray.length < 6) {
-//             if (coreData[randomIndex].target==='abs' || coreData[randomIndex].target==='adductors' || coreData[randomIndex].target==='glutes' || coreData[randomIndex].target==='spine') {
-//                 randomIndex=Math.floor(Math.random() * 1325);
-                
-//                 coreExerciseArray.push(coreData[randomIndex])
-//             }
+        if (coreData.length !== 0 && props.intensity < 3) {
+            while (coreExerciseArray.length < 6) {
+                randomIndex=Math.floor(Math.random() * 1326);
+                if (coreData[randomIndex].target==='abs' || coreData[randomIndex].target==='adductors' || coreData[randomIndex].target==='glutes' || coreData[randomIndex].target==='spine') {
+                    coreExerciseArray.push(coreData[randomIndex])
+            }
         
-//         }
-//     }
-// }
-//     createCoreArray();
+        }
+    }
+}
+    createCoreArray();
 
-    console.log(coreExerciseArray)
-    console.log(coreData[randomIndex])
+    // console.log(coreExerciseArray)
+    // console.log(coreData[randomIndex].target)
+    // both work
 
     return (
         <Fragment>
-            <p>Core Suggestion</p>
-            <p>Do 3 repetitions, 2 if you need an easier/shorter workout</p>
+            <h1>Core Workout Suggestion</h1>
+            <p>Do 10-20 repetitions 3 times, 2 times if you need an easier/shorter workout</p>
                 
 
                 {coreData.length !== 0 ? 
-                    <ol>
+                   <p> 
                     {coreExerciseArray.map((exercise) =>  
                         <CoreSelector key={exercise.name}
                             name={exercise.name}
@@ -80,7 +81,7 @@ const CoreSuggestion = (props) => {
                             gifUrl={exercise.gifUrl} /> 
                     )}
                     
-                    </ol>
+                    </p>
                 : null}
                 
         </Fragment>

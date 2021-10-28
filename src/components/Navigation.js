@@ -29,6 +29,7 @@ const Navigation = () => {
             <br /><br />
             <div className="text-center">
             <table border border-dark text-center justify-content-center>
+                <tbody>
                 <tr>
                     <td><img src = {run} alt="" width="95" height="95" /></td>
                     <td><img src = {bike} alt="" width="95" height="95" /></td>
@@ -48,7 +49,7 @@ const Navigation = () => {
                     <td><img src = {yoga} alt="" width="95" height="95" /></td>
 
                 </tr>
-                
+                </tbody>
             </table>
             </div>
         </div>

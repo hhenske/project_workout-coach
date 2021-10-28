@@ -10,9 +10,9 @@ const StrengthSelector = (props) => {
 
     return (
         <Fragment>
-            <table className="table border border-dark table-hover text-center justify-content-center ">
+            <table className="table border border-dark table-hover justify-content-center ">
                 <thead>
-                    <td className="font-weight-bold">{props.name}</td>
+                    <tr> <td className="font-weight-bold">{props.name}</td> </tr>
                 </thead> 
                 <tbody>
                     <tr>{props.target}</tr>
