@@ -1,7 +1,6 @@
-import React, { Component, Fragment, useState, useEffect } from 'react'
-import axios from 'axios';
+import React, { Fragment, useState, useEffect } from 'react'
 import StrengthSelector from './StrengthSelector';
-import Form from "./Form";
+
 
 
 const StrengthSuggestion = (props) => {
@@ -29,7 +28,7 @@ const StrengthSuggestion = (props) => {
                 'x-rapidapi-host': 'exercisedb.p.rapidapi.com',
                 'x-rapidapi-key': '226f1f3dc3msh4967f81ea387d7cp16bcfdjsn289968c31ba3'
             }
-            };
+        };
 
         axios.request(options).then(function (response) {
             console.log(response.data[1325].name, response.data[1325].gifUrl, response.data[1325].bodyPart);
@@ -46,12 +45,13 @@ const StrengthSuggestion = (props) => {
     }, []);
 
 
-    // if (strengthData.length != 0) {
-    //     console.log(strengthData)}   works
-    // console.log(props.intensity) works
+    if (strengthData.length !== 0) {
+        console.log(strengthData)  
+        console.log(props.intensity) 
+    }
 
     function randomIndex() {
-        if (strengthData.length != 0 && props.intensity > 2) {
+        if (strengthData.length !== 0 && props.intensity > 2) {
             for (let i=0; i < 8; i++) {
                 randomIndex= Math.floor(Math.random() * 1325);
                 randomIndexArray.push(strengthData[randomIndex])
@@ -68,7 +68,6 @@ const StrengthSuggestion = (props) => {
     randomIndex();
         
     
-
     return (
         
         <Fragment>

@@ -13,8 +13,9 @@ const Banner = () => {
       </div>
       <div className="col-5 text-left text-bottom">
       <img src={runner} 
-      width='50'
-       height="50"/>
+      width='140'
+       height="140"
+       alt="exercise logo" />
        </div>
     </React.Fragment>
   )};

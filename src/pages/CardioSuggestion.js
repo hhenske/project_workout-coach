@@ -1,10 +1,17 @@
 import { useState, Fragment } from 'react';
 
+import run from '../images/run.png';
+import swim from '../images/swim.png';
+import bike from '../images/bike.png';
+import hike from '../images/hike.png';
+import walk from '../images/walk.png';
+
+
 const CardioSuggestion = (props) => {
 
-    // const [cardioSuggestion, setCardioSuggestion] = useState();
     
-    let randomIndex = Math.floor(Math.random() * 5);
+    let workoutSuggestion='';
+
      // data for cardio exercises:
 
      const easyCardio = [
@@ -141,32 +148,74 @@ const CardioSuggestion = (props) => {
             }
     ]
 
-        // const userChoiceHandler = (props) => {
-        //     if (props.intensity == 1) {
-        //        setCardioSuggestion(hardCardio[randomIndex])
-        //     } cant get that to work
+    //     // const userChoiceHandler = (props) => {
+    //     //     if (props.intensity == 1) {
+    //     //        setCardioSuggestion(hardCardio[randomIndex])
+    //     //     } cant get that to work
         
-        // }
+    //     // }
     
         
-    // const EasyCardioSuggestion = () => {
-    //     easyCardioIndex = Math.floor(Math.random() * 5)
-    //     easyCardioSuggestion = easyCardio[easyCardioIndex]
+    // // const EasyCardioSuggestion = () => {
+    // //     easyCardioIndex = Math.floor(Math.random() * 5)
+    // //     easyCardioSuggestion = easyCardio[easyCardioIndex]
+
+    // function randomIndex() {
+    //     if (props.intensity > 2) {
+            
+    let randomIndex= Math.floor(Math.random() * 5);
+        if (props.intensity > 2) {
+            workoutSuggestion=easyCardio[randomIndex]
+        }
+
+        if (props.intensity > 1 && props.intensity < 3) {
+            workoutSuggestion=medCardio[randomIndex]
+        }
+
+        if (props.intensity < 2) {
+            workoutSuggestion=hardCardio[randomIndex]
+        }
+
+
+    //         return randomIndex
+    // console.log(props.intensity)
+    // console.log(randomIndex)
+    // console.log(hardCardio[2].act)
+    // console.log(typeof(easyCardio)) (object)
+    
+    // console logs above all work, meaning I have what I need to make this work
+                
+    console.log(workoutSuggestion.act)
+    
        
 
         return (
             <Fragment>
             
-                <p>cardio workout</p>
-           
-                {/* What I REALLY want in the <p> is a randomly chosen workout from that category */}
-                {props.intensity == 1 ? <p>{hardCardio[0]}</p> : null}
-                {props.intensity > 1 && props.intensity < 3 ? <p>{medCardio[0]}</p> : null}
-                {props.intensity > 2 ? <p>{hardCardio[0]} </p> : null}
+                <h1>Cardio workout</h1>
+                {/* <p>{workoutSuggestion.act}</p> */}
+                <table className="table border border-dark table-hover text-center justify-content-center ">
+                <thead>
+                    <td className="font-weight-bold">{workoutSuggestion.act}</td>
+                </thead> 
+                <tbody>
+                    <tr>{workoutSuggestion.type}</tr>
+                    <tr>intervals: {workoutSuggestion.intervals}</tr>
+                    <tr>intensity: {workoutSuggestion.intensity}</tr>
+                    <tr>{workoutSuggestion.act == 'swim' ? <img src = {swim} />: null}
+                        {workoutSuggestion.act == 'run' ? <img src = {run} />: null}
+                        {workoutSuggestion.act == 'cycling' ? <img src = {bike} />: null}
+                        {workoutSuggestion.act == 'hike' ? <img src = {hike} />: null}
+                        {workoutSuggestion.act == 'walk' ? <img src = {walk} />: null} 
+                   </tr> 
+                    {/* displays all pictures. I just want the one chosen */}
+                </tbody>
+            </table>
+            
             </Fragment>
         )
 
-
         }
+        
 
 export default CardioSuggestion;   

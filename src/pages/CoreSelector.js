@@ -1,7 +1,7 @@
 import { Fragment } from 'react';
 
 
-const StrengthSelector = (props) => {
+const CoreSelector = (props) => {
     // name:
     // target:
     // gifUrl:
@@ -23,4 +23,4 @@ const StrengthSelector = (props) => {
     )
 }
 
-export default StrengthSelector;
+export default CoreSelector;
