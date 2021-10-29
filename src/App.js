@@ -27,12 +27,12 @@ const App = () => {
       </div>
       <div className = "container-fluid min-vh=100">
         <div className = "row justify-content-center min-vh-100">
-          <nav className = "col-2 no-float bg-info bg-gradient container-fluid h=100 flex-grow=2">
+          <nav className = "col-3 no-float bg-info bg-gradient container-fluid h=100 flex-grow=2">
             <Navigation />
           </nav>
     
       
-          <main className="col-10 no float bg-secondary bg-gradient d-flex justify-content-center" >
+          <main className="col-9 no float bg-secondary bg-gradient d-flex justify-content-center" >
             {/* // {...logButton && <Log />}
             // {...homeButton && <Form />} */}
                 

@@ -41,23 +41,23 @@ const Form = () => {
 
     if (enteredCategory === '' || enteredIntensity === '') {
       setFormIsValid(false);
+      
       return;
     }
 
     if (enteredCategory !== '' && enteredIntensity !== '') {
       setFormIsValid(true);
+      
       return;
       
     }
     
-    setEnteredIntensity('');
-    setEnteredCategory('');
-    // on Submit, we want to ...1) store the entered category for adding to the activity log AND for choosing the workout DONE w/state and sent to Suggestedworkout through props
-                                // 2) randomly choose a workout in the correct category and intensity - to be done in SuggestedWorkout component
-    //                          3) make the "How about...." code appear (otherwise, it shouldn't be displayed) (DONE)
+    
+    
     
   };
 
+  // setFormIsValid(false);
   
 
 return (

@@ -1,4 +1,4 @@
-import { useState, Fragment } from 'react';
+import { Fragment } from 'react';
 
 import run from '../images/run.png';
 import swim from '../images/swim.png';
@@ -199,14 +199,14 @@ const CardioSuggestion = (props) => {
                     <tr><td className="font-weight-bold">{workoutSuggestion.act}</td></tr>
                 </thead> 
                 <tbody>
-                    <tr>{workoutSuggestion.type}</tr>
-                    <tr>intervals: {workoutSuggestion.intervals}</tr>
-                    <tr>intensity: {workoutSuggestion.intensity}</tr>
-                    <tr>{workoutSuggestion.act == 'swim' ? <img src = {swim} />: null}
-                        {workoutSuggestion.act == 'run' ? <img src = {run} />: null}
-                        {workoutSuggestion.act == 'cycling' ? <img src = {bike} />: null}
-                        {workoutSuggestion.act == 'hike' ? <img src = {hike} />: null}
-                        {workoutSuggestion.act == 'walk' ? <img src = {walk} />: null} 
+                    <tr><td>{workoutSuggestion.type}</td></tr>
+                    <tr><td>intervals: {workoutSuggestion.intervals}</td></tr>
+                    <tr><td>intensity: {workoutSuggestion.intensity}</td></tr>
+                    <tr><td>{workoutSuggestion.act === 'swim' ? <img src = {swim} alt='Swim logo' />: null}
+                        {workoutSuggestion.act === 'run' ? <img src = {run} alt='Run logo' />: null}
+                        {workoutSuggestion.act === 'cycling' ? <img src = {bike} alt='Cycling logo' />: null}
+                        {workoutSuggestion.act === 'hike' ? <img src = {hike} alt='hike logo' />: null}
+                        {workoutSuggestion.act === 'walk' ? <img src = {walk} alt='Walking logo' />: null} </td>
                    </tr> 
                     {/* displays all pictures. I just want the one chosen */}
                 </tbody>

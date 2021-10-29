@@ -1,4 +1,4 @@
-import React, { Component, Fragment, useState, useEffect } from 'react';
+import React, { Fragment, useState, useEffect } from 'react';
 import CoreSelector from './CoreSelector';
 
 
@@ -32,12 +32,12 @@ const CoreSuggestion = (props) => {
         });
     }, []);
 
-    console.log(coreData.length)
-    // returns 1327
-    if (coreData.length != 0) {
-        console.log(coreData[0].target);
-        console.log(props.intensity);
-    } 
+    // console.log(coreData.length)
+    // // returns 1327
+    // if (coreData.length != 0) {
+    //     console.log(coreData[0].target);
+    //     console.log(props.intensity);
+    // } 
     // both work
 
     function createCoreArray() {

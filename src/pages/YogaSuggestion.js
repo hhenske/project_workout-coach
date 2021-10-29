@@ -45,12 +45,10 @@ const YogaSuggestion = (props) => {
             <table className="table table-sm border border-2 border-dark  text-center justify-content-center ">
                 <thead>
                     <tr><td className="font-weight-bold"><Link to={workoutSuggestion} className="link-dark">{workoutSuggestion}</Link></td></tr>
-                    <br />
                 </thead> 
-                
                 <tbody>
-                    <tr> <td className="justify-content-center"><img src = {yoga} /></td>
-                        <td className="justify-content-center"><img src = {yoga2} /></td></tr>
+                    <tr><td className="justify-content-center"><img src = {yoga} alt="" /></td>
+                        <td className="justify-content-center"><img src = {yoga2} alt=""/></td></tr>
                 </tbody>
             </table>
         </Fragment>

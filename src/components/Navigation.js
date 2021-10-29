@@ -14,6 +14,7 @@ const Navigation = () => {
     return(       
         <div>
             <br />
+            {/* if page is already on Form. we want a refresh or reset*/}
             <div><NavLink to ="/Form" type="button" className="btn btn-secondary btn-lg btn-block active" role="button" aria-pressed="true">
             Home</NavLink>
             </div>
@@ -28,7 +29,7 @@ const Navigation = () => {
             </div>
             <br /><br />
             <div className="text-center">
-            <table border border-dark text-center justify-content-center>
+            <table className = "border border-dark text-center justify-content-center">
                 <tbody>
                 <tr>
                     <td><img src = {run} alt="" width="95" height="95" /></td>
@@ -39,7 +40,7 @@ const Navigation = () => {
                 <tr>
                     <td><img src = {lift} alt="" width="95" height="95" /></td>
                     <td><img src = {walk} alt="" width="95" height="95" /></td>
-                    <td><img src = {swim} aalt="" width="95" height="95" /></td>
+                    <td><img src = {swim} alt="" width="95" height="95" /></td>
                 </tr>
                 
                 <tr>

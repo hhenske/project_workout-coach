@@ -1,7 +1,6 @@
-import { distanceAndSkiddingToXY } from '@popperjs/core/lib/modifiers/offset';
-import React, { useState } from 'react';
-import Stopwatch from './Stopwatch';
-import Form from './Form';
+
+import React from 'react';
+
 
 
 
@@ -9,33 +8,7 @@ import Form from './Form';
 const Log = () => {
 
     
-    // hard coded data to use for design. Remove when not needed
-   const activities = [
-        { 
-          activity: 'cardio',
-          time: '80',
-          date: new Date(2021, 2, 28)
-        },
-        {
-          activity: 'core',
-          time: '40',
-          date: new Date(2021, 2, 29)
-        },
-        {
-          activity: 'yoga',
-          time: '62',
-          date: new Date(2021, 3, 1)
-        },
-        {
-          activity: 'cardio',
-          time: '90',
-          date: new Date(2021, 3, 2)
-        }
-      ];
-
-
-      const [activity, setActivity] = useState();
-
+    
     return (
         <React.Fragment>
                 

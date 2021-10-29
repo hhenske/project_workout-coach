@@ -39,6 +39,18 @@ const SuggestedWorkout = (props) => {
        
     }
 
+    
+    const workoutNotAcceptedHandler = (event) => {
+        event.preventDefault();
+    
+        setSubmitTouched(false);
+        
+        setEnteredIntensity('0');
+        setEnteredCategory('0');
+    
+       };
+    
+
     return (
         <Fragment>
             <h2>How about....</h2>
@@ -53,12 +65,7 @@ const SuggestedWorkout = (props) => {
               
             {props.category == 4 ? <YogaSuggestion intensity={props.intensity} /> : null}
 
-            {/* {props.category == 4 && props.intensity == 2 ? <p>Yoga Workout</p> : null}
-            {props.category == 4 && props.intensity > 2 ? <p>Restaurative Yoga</p> : null} */}
-
-
-                {/* <p>{props.category}</p>
-                <p>{props.intensity}</p> */}
+           
                 
                 
             </div>
