@@ -1,5 +1,5 @@
-import React from "react";
-
+import React, { Fragment } from "react";
+import { NavLink } from 'react-router-dom';
 
 
 const Stopwatch = () => {
@@ -21,6 +21,7 @@ const Stopwatch = () => {
   }, [timerOn]);
 
   return (
+    <Fragment>
     <div style={{"font-size":"40px"}}>
         <br /><br />
     <div className='stopwatch-card' className="row mx-auto border border-info rounded-top text-center font-weight-bold">
@@ -36,6 +37,8 @@ const Stopwatch = () => {
           <button onClick={() => setTimerOn(true)}>Start</button>
         )}
         {timerOn && <button onClick={() => setTimerOn(false)}>Stop</button>}
+        {setTime}
+        {/* {console.log(time)} */}
         {!timerOn && time > 0 && (
           <button onClick={() => setTime(0)}>Reset</button>
         )}
@@ -44,7 +47,11 @@ const Stopwatch = () => {
         )}
       </div>
     </div>
+    <NavLink to="/Log" type="button" className="btn btn-secondary brn-lg btn-block active" role="button" aria-pressed="true" time={time}>
+    Log Workout</NavLink>
     </div>
+    
+    </Fragment>
   );
 };
 

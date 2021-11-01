@@ -33,16 +33,7 @@ const App = () => {
     
       
           <main className="col-9 no float bg-secondary bg-gradient d-flex justify-content-center" >
-            {/* // {...logButton && <Log />}
-            // {...homeButton && <Form />} */}
-                
-            {/* <h1> Workout Log</h1> */}
-            {/* <table className="table">
-            <Log activity={activities[0].activity} time= {activities[0].time} date={activities[0].date} />
-            <Log activity={activities[1].activity} time= {activities[1].time} date={activities[1].date} />
-            <Log activity={activities[2].activity} time= {activities[2].time} date={activities[2].date} />
-            <Log activity={activities[3].activity} time= {activities[3].time} date={activities[3].date} />
-            </table> */}
+           
           <br />
           <Route exact path="/">
             <Redirect to="/Form" />

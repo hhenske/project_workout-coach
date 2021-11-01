@@ -1,15 +1,13 @@
 import React, { Fragment, useState, useEffect } from 'react';
 import SuggestedWorkout from './SuggestedWorkout';
 
-// Don't touch this component.  It is done
-
 
 const Form = () => {
   const [enteredCategory, setEnteredCategory] = useState('');
   const [enteredIntensity, setEnteredIntensity] = useState('');
   const [formIsValid, setFormIsValid] = useState(false);
   const [submitTouched, setSubmitTouched] = useState(false);
-  // const [enteredIntensityTouched, setEnteredIntensityTouched] = useState(false);
+  
 
   let formIsInvalid = !formIsValid  && submitTouched;
   
@@ -17,48 +15,38 @@ const Form = () => {
     if (formIsInvalid) {
       alert("Please be sure to select an option in both fields")
     }
-  } , [submitTouched, formIsInvalid])
 
-  const categoryChoiceHandler = (event) => {
-    setEnteredCategory(event.target.value);
-    
-    
-  };
-  
-  
+    } , [submitTouched, formIsInvalid])
 
-  const intensityChoiceHandler = (event) => {
-    setEnteredIntensity(event.target.value);
-    
-    
-  };
 
-  const formSubmissionHandler = event => {
-    event.preventDefault();
+    const categoryChoiceHandler = (event) => {
+      setEnteredCategory(event.target.value);
+    };
 
-    setSubmitTouched(true);
-    
 
-    if (enteredCategory === '' || enteredIntensity === '') {
-      setFormIsValid(false);
+    const intensityChoiceHandler = (event) => {
+      setEnteredIntensity(event.target.value);  
+    };
+
+
+    const formSubmissionHandler = (event) => {
+      event.preventDefault();
+
+      setSubmitTouched(true);
       
-      return;
-    }
+      if (enteredCategory === '' || enteredIntensity === '') {
+        setFormIsValid(false);
+        return;
+      }
 
-    if (enteredCategory !== '' && enteredIntensity !== '') {
-      setFormIsValid(true);
+      if (enteredCategory !== '' && enteredIntensity !== '') {
+        setFormIsValid(true);
+        return;
+      }
       
-      return;
       
-    }
+    };
     
-    
-    
-    
-  };
-
-  // setFormIsValid(false);
-  
 
 return (
   <Fragment>

@@ -9,6 +9,8 @@ const CoreSuggestion = (props) => {
     let coreExerciseArray=[];
     let randomIndex=0
 
+    
+
     // // accesses the API for strenth execises:
     useEffect(() => {
         const axios = require("axios").default;
@@ -23,8 +25,9 @@ const CoreSuggestion = (props) => {
             };
 
         axios.request(options).then(function (response) {
-            // console.log(response.data[1325].name, response.data[1325].gifUrl, response.data[1325].bodyPart);
+            
             setCoreData(response.data);
+            
             
         
         }).catch(function (error) {
@@ -32,13 +35,8 @@ const CoreSuggestion = (props) => {
         });
     }, []);
 
-    // console.log(coreData.length)
-    // // returns 1327
-    // if (coreData.length != 0) {
-    //     console.log(coreData[0].target);
-    //     console.log(props.intensity);
-    // } 
-    // both work
+   
+   
 
     function createCoreArray() {
         if (coreData.length !== 0 && props.intensity > 2)  {
@@ -62,9 +60,7 @@ const CoreSuggestion = (props) => {
 }
     createCoreArray();
 
-    // console.log(coreExerciseArray)
-    // console.log(coreData[randomIndex].target)
-    // both work
+
 
     return (
         <Fragment>
@@ -73,7 +69,7 @@ const CoreSuggestion = (props) => {
                 
 
                 {coreData.length !== 0 ? 
-                   <p> 
+                   <div> 
                     {coreExerciseArray.map((exercise) =>  
                         <CoreSelector key={exercise.name}
                             name={exercise.name}
@@ -81,13 +77,13 @@ const CoreSuggestion = (props) => {
                             gifUrl={exercise.gifUrl} /> 
                     )}
                     
-                    </p>
+                    </div>
                 : null}
                 
         </Fragment>
     )
 
 } 
-// end of component function
+
 
 export default CoreSuggestion;

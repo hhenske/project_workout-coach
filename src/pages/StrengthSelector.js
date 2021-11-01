@@ -2,11 +2,7 @@ import { Fragment } from 'react';
 
 
 const StrengthSelector = (props) => {
-    // name:
-    // target:
-    // gifUrl:
-// console.log("Hello")
-
+    
 
     return (
         <Fragment>

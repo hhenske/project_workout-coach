@@ -1,13 +1,16 @@
 
-import React from 'react';
+import React, { useState } from 'react';
+import Stopwatch from './Stopwatch';
 
 
 
 
 
-const Log = () => {
+const Log = (props) => {
 
-    
+    const [time, setTime] = useState()
+    console.log(time) 
+    // currently undefined
     
     return (
         <React.Fragment>

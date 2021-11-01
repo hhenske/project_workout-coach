@@ -9,8 +9,6 @@ import YogaSuggestion from './YogaSuggestion';
 
 
 // this component takes the enteredCategory and the enteredIntensity and suggests a workout
-
-
 const SuggestedWorkout = (props) => {
 
     const [enteredCategory, setEnteredCategory] = useState('');
@@ -32,38 +30,24 @@ const SuggestedWorkout = (props) => {
         if (enteredCategory !== '' && enteredIntensity !== '') {
           setFormIsValid(true);
           return;
-        }
-        
-        // setEnteredIntensity('');
-        // setEnteredCategory('');
+        };
        
-    }
+    };
 
     
-    const workoutNotAcceptedHandler = (event) => {
-        event.preventDefault();
-    
-        setSubmitTouched(false);
-        
-        setEnteredIntensity('0');
-        setEnteredCategory('0');
-    
-       };
-    
-
     return (
         <Fragment>
             <h2>How about....</h2>
             <br />
            
             <div>
-            {props.category == 3 ? <CardioSuggestion intensity={props.intensity}/> : null}
+            {props.category === "3" ? <CardioSuggestion intensity={props.intensity}/> : null}
                 
-            {props.category == 2 ? <StrengthSuggestion  intensity={props.intensity} /> : null}
+            {props.category === "2" ? <StrengthSuggestion  intensity={props.intensity} /> : null}
                 
-            {props.category == 1 ? <CoreSuggestion intensity={props.intensity} /> : null}
+            {props.category === "1" ? <CoreSuggestion intensity={props.intensity} /> : null}
               
-            {props.category == 4 ? <YogaSuggestion intensity={props.intensity} /> : null}
+            {props.category === "4" ? <YogaSuggestion intensity={props.intensity} /> : null}
 
            
                 
@@ -71,10 +55,10 @@ const SuggestedWorkout = (props) => {
             </div>
             <br /><br />
             <NavLink to="Timer" type="button" className="btn btn-info">Yes! Ready to work out!</NavLink>
-               
                 {' '} 
-                <NavLink to="Form" type="button" className="btn btn-info" onClick = {formSubmissionHandler}>No, choose another workout
-                </NavLink>
+                <NavLink to="Form" type="button" className="btn btn-info" onClick = {formSubmissionHandler}>
+                    No, choose another workout</NavLink>
+               
                 {/* I would like this button to rerun the submit and suggested workout so a new randomized workout renders*/}
                {/* it's working now, but only one time AND I re-did the submit handler because I couldn't pass it down*/}
         </Fragment>
