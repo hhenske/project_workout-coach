@@ -34,7 +34,8 @@ const SuggestedWorkout = (props) => {
        
     };
 
-    
+    console.log(props.category)
+
     return (
         <Fragment>
             <h2>How about....</h2>
@@ -54,7 +55,7 @@ const SuggestedWorkout = (props) => {
                 
             </div>
             <br /><br />
-            <NavLink to="Timer" type="button" className="btn btn-info">Yes! Ready to work out!</NavLink>
+            <NavLink to="Timer" type="button" className="btn btn-info" category={props.category}>Yes! Ready to work out!</NavLink>
                 {' '} 
                 <NavLink to="Form" type="button" className="btn btn-info" onClick = {formSubmissionHandler}>
                     No, choose another workout</NavLink>

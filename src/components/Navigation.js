@@ -26,17 +26,17 @@ const Navigation = () => {
             {/* {window.location.pathname="src\pages\Form.js" ? */}
                 {/* <button className="btn btn-secondary btn-lg btn-block active" onClick={refreshPage}  aria-pressed="true">Home</button>
                 : */}  
-                <NavLink to ="/Form" type="button" className="btn btn-secondary btn-lg btn-block active" role="button" aria-pressed="true">
+                <NavLink to ="/Form" type="button" className="btn btn-info btn-lg btn-block active" role="button" aria-pressed="true">
                 Home</NavLink>
            
             
             </div>
             <br /><br />
-                <div><NavLink to="/Log" type="button" className="btn btn-secondary brn-lg btn-block active" role="button" aria-pressed="true">
+                <div><NavLink to="/Log" type="button" className="btn btn-info brn-lg btn-block active" role="button" aria-pressed="true">
             Workout Log</NavLink>
                 </div>
                 <br /><br />
-            <div><NavLink to="/Timer" type="button" className="btn btn-secondary brn-lg btn-block active" role="button" aria-pressed="true">
+            <div><NavLink to="/Timer" type="button" className="btn btn-info brn-lg btn-block active" role="button" aria-pressed="true">
             Timer</NavLink>
             <br /><br />
             </div>

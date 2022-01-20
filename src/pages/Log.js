@@ -8,8 +8,8 @@ import Stopwatch from './Stopwatch';
 
 const Log = (props) => {
 
-    const [time, setTime] = useState()
-    console.log(time) 
+    // const [time, setTime] = useState()
+    console.log(props.time) 
     // currently undefined
     
     return (

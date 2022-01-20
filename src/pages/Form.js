@@ -81,7 +81,7 @@ return (
             </select></label>
             <div>
               <br /><br />
-              <button type ="button" className="btn btn-outline-info" onClick = {formSubmissionHandler}>Submit</button>
+              <button type ="button" className="btn btn-info" onClick = {formSubmissionHandler}>Submit</button>
               <br /><br />
             
               

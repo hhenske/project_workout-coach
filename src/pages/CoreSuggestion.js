@@ -2,11 +2,13 @@ import React, { Fragment, useState, useEffect } from 'react';
 import CoreSelector from './CoreSelector';
 
 
+let coreExerciseArray=[];
+
 const CoreSuggestion = (props) => {
 
     const [coreData, setCoreData] = useState([]);
-
-    let coreExerciseArray=[];
+    const [coreExerciseArray, setCoreExerciseArray] = useState([]);
+    
     let randomIndex=0
 
     
@@ -44,6 +46,7 @@ const CoreSuggestion = (props) => {
                 randomIndex= Math.floor(Math.random() * 1326);
                 if (coreData[randomIndex].target==='abs' || coreData[randomIndex].target==='adductors' || coreData[randomIndex].target==='glutes' || coreData[randomIndex].target==='spine') {
                     coreExerciseArray.push(coreData[randomIndex])
+                   
             }
         }
     }
@@ -60,7 +63,7 @@ const CoreSuggestion = (props) => {
 }
     createCoreArray();
 
-
+    // console.log(coreExerciseArray) works but prings two things: [length: 0 {{prototype]]: array(0)}}] AND what I wanted
 
     return (
         <Fragment>
@@ -74,7 +77,9 @@ const CoreSuggestion = (props) => {
                         <CoreSelector key={exercise.name}
                             name={exercise.name}
                             target={exercise.target}
-                            gifUrl={exercise.gifUrl} /> 
+                            gifUrl={exercise.gifUrl} 
+                            coreExerciseArray = {coreExerciseArray}
+                             /> 
                     )}
                     
                     </div>
